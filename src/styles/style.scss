@@ -1,0 +1,36 @@
+body {
+  font-size: 62.5%;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background-image: linear-gradient(
+    to right top,
+    #d16ba5,
+    #c777b9,
+    #ba83ca,
+    #aa8fd8,
+    #9a9ae1,
+    #8aa7ec,
+    #79b3f4,
+    #69bff8,
+    #52cffe,
+    #41dfff,
+    #46eefa,
+    #5ffbf1
+  );
+  font-family: Arial, sans-serif;
+}
+
+.navigation {
+  margin: 3rem;
+  background-color: blue;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  border-radius: 50px;
+}
+
+h1 {
+  font-size: 2.5rem;
+  text-align: center;
+  color: black;
+}
