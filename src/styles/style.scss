@@ -74,6 +74,10 @@ body {
   text-decoration: none;
 }
 
+.close-menu {
+  display: none;
+}
+
 @media (max-width: 768px) {
   .navigation h1 {
     font-size: 1.5rem;
