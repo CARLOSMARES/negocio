@@ -1,6 +1,40 @@
 ---
 
 ---
+
+<script is:inline>
+  document.addEventListener("DOMContentLoaded", () => {
+    const menuIcon = document.querySelector(".menu-icon");
+    const menu = document.querySelector(".menu");
+    const closeMenu = document.querySelector(".close-menu");
+    
+    if (menuIcon && menu) {
+      menuIcon.addEventListener("click", () => {
+        menu.classList.toggle("active");
+      });
+    }
+
+    closeMenu.addEventListener("click", () => {
+      menu.classList.remove("active");
+    });
+  });
+</script>
+
 <div class="navigation">
-    <h1>Carlos Mares Dev</h1>
+  <img src="favicon.svg" alt="Logo" />
+  <h1>Carlos Mares Dev</h1>
+  <nav>
+    <div class="menu-icon">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+    </div>
+    <ul class="menu">
+      <li class="close-menu">X</li>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
 </div>
