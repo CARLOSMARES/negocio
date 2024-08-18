@@ -1,5 +1,4 @@
 ---
-
 ---
 
 <script is:inline>
@@ -7,7 +6,7 @@
     const menuIcon = document.querySelector(".menu-icon");
     const menu = document.querySelector(".menu");
     const closeMenu = document.querySelector(".close-menu");
-    
+
     if (menuIcon && menu) {
       menuIcon.addEventListener("click", () => {
         menu.classList.toggle("active");
@@ -31,10 +30,10 @@
     </div>
     <ul class="menu">
       <li class="close-menu">X</li>
-      <li><a href="#">Home</a></li>
-      <li><a href="#">About</a></li>
-      <li><a href="#">Services</a></li>
-      <li><a href="#">Contact</a></li>
+      <li><a href="/">Inicio</a></li>
+      <li><a href="/servicios">Servicios</a></li>
+      <li><a href="/nosotros">Sobre Nostros</a></li>
+      <li><a href="/contacto">Contacto</a></li>
     </ul>
   </nav>
 </div>
