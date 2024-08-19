@@ -78,6 +78,17 @@ body {
   display: none;
 }
 
+.mini-logo{
+  float: right;
+  width: 50%;
+  background-color: darkblue;
+  opacity: 65%;
+}
+
+.logo{
+  background-color: darkblue;
+}
+
 @media (max-width: 768px) {
   .navigation h1 {
     font-size: 1.5rem;
@@ -110,7 +121,7 @@ body {
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.8); /* Fondo semitransparente */
+    background-color: rgba(0, 0, 0, 0.95); /* Fondo semitransparente */
     z-index: 1000; /* Asegura que esté sobre otros elementos */
     padding: 2rem;
     box-sizing: border-box;
@@ -124,9 +135,20 @@ body {
     color: white;
   }
 
+  .menu li{
+    margin: 1rem 0;
+    text-align: center;
+    width: 100%;
+  }
+
   .menu li a{
     color: white;
+    font-size: 1.6rem;
     text-decoration: none;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Stronger shadow for better readability */
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background behind the text */
+    padding: 0.5rem 1rem; /* Padding for better spacing around text */
+    border-radius: 5px; /* Optional: Rounded corners for the background */
   }
 
   .close-menu {
@@ -138,6 +160,10 @@ body {
     top: 2rem;
     right: 2rem;
     z-index: 1001; /* Asegúrate de que esté sobre el menú */
+    align-items: end;
+    justify-content: end;
+    background-color: rgba(0, 0, 0, 0.5); /* Optional: Add background for visibility */
+    border-radius: 50%; /* Optional: Make it circular */
   }
 
 }
