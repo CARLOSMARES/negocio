@@ -9,6 +9,7 @@ body {
   background-repeat: no-repeat; /* Evita que la imagen se repita */
   background-attachment: fixed; /* Mantiene la imagen fija al hacer scroll */
   color: #ffffff; /* Ajusta el color del texto para que sea legible */
+  position: relative; /* Asegura que los elementos posicionados absolutamente se alineen correctamente */
 }
 
 body::before {
@@ -26,6 +27,7 @@ body::before {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  padding-top: 10vh;
 }
 
 main {
@@ -58,16 +60,19 @@ footer a:hover {
 }
 
 .navigation {
-  margin: 3rem;
-  padding: 0;
+  position: fixed;
+  top: 2vh;
+  left: 10%;
+  width: 80%;
+  height: 10vh;
   background-image: linear-gradient(to right top, orange, red, gold);
   border-radius: 50px;
-  height: 10vh;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 2rem;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
 }
 
 .navigation img {
