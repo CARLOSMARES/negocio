@@ -1,25 +1,62 @@
+html,
 body {
-  font-size: 62.5%;
+  height: 100%;
   margin: 0;
-  padding: 0;
-  height: 100vh;
-  background-image: linear-gradient(
-    to right top,
-    #d16ba5,
-    #c777b9,
-    #ba83ca,
-    #aa8fd8,
-    #9a9ae1,
-    #8aa7ec,
-    #79b3f4,
-    #69bff8,
-    #52cffe,
-    #41dfff,
-    #46eefa,
-    #5ffbf1
-  );
-  font-family: Arial, sans-serif;
+  font-size: 62.5%;
+  background-image: url("/public/fondo.webp");
+  background-size: cover; /* Ajusta la imagen para cubrir todo el fondo */
+  background-position: center; /* Centra la imagen */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  background-attachment: fixed; /* Mantiene la imagen fija al hacer scroll */
+  color: #ffffff; /* Ajusta el color del texto para que sea legible */
 }
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Capa negra semitransparente */
+  z-index: -1; /* Coloca la capa detrás del contenido */
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+
+main p {
+  font-size: 2.2rem; /* Aumenta el tamaño del texto */
+  line-height: 1.6; /* Mejora el espaciado entre líneas */
+  max-width: 800px; /* Limita el ancho del texto para mejor legibilidad */
+  margin: 0 auto; /* Centra el texto */
+}
+
+footer {
+  background-color: #222;
+  color: #ddd;
+  padding: 2rem;
+  text-align: center;
+  font-size: 1.4rem;
+}
+
+footer a {
+  color: #ff8800;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+footer a:hover {
+  color: white;
+}
+
 .navigation {
   margin: 3rem;
   padding: 0;
@@ -30,6 +67,7 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 0 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .navigation img {
@@ -56,6 +94,23 @@ body {
   height: 3px;
   background-color: black;
   margin: 3px 0;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.menu-icon:hover .line {
+  background-color: #ff8800;
+}
+
+.menu-icon.active .line:nth-child(1) {
+  transform: rotate(45deg) translateY(5px);
+}
+
+.menu-icon.active .line:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-icon.active .line:nth-child(3) {
+  transform: rotate(-45deg) translateY(-5px);
 }
 
 .navigation nav ul {
@@ -63,6 +118,14 @@ body {
   display: flex;
   gap: 2rem;
   margin: 0;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  transform: translateY(-20px);
+  opacity: 0;
+}
+
+.navigation nav ul.menu.active {
+  transform: translateY(0);
+  opacity: 1;
 }
 
 .navigation nav ul li {
@@ -72,21 +135,35 @@ body {
 .navigation nav ul li a {
   color: black;
   text-decoration: none;
+  transition: color 0.3s, background-color 0.3s;
+}
+
+.navigation nav ul li a:hover {
+  color: #ff8800;
+  background-color: rgba(255, 136, 0, 0.1);
+  border-radius: 5px;
 }
 
 .close-menu {
   display: none;
 }
 
-.mini-logo{
-  float: right;
-  width: 50%;
+.logo {
   background-color: darkblue;
-  opacity: 65%;
 }
 
-.logo{
-  background-color: darkblue;
+@media (max-width: 1024px) {
+  .navigation h1 {
+    font-size: 1.8rem;
+  }
+
+  .navigation {
+    height: 8vh;
+  }
+
+  .navigation nav ul li {
+    font-size: 0.9rem;
+  }
 }
 
 @media (max-width: 768px) {
@@ -131,24 +208,29 @@ body {
     margin: 0;
   }
 
-  .menu.menu.active li a{
+  .menu.menu.active li a {
     color: white;
   }
 
-  .menu li{
+  .menu li {
     margin: 1rem 0;
     text-align: center;
     width: 100%;
   }
 
-  .menu li a{
+  .menu li a {
     color: white;
     font-size: 1.6rem;
     text-decoration: none;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Stronger shadow for better readability */
-    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background behind the text */
-    padding: 0.5rem 1rem; /* Padding for better spacing around text */
-    border-radius: 5px; /* Optional: Rounded corners for the background */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Sombra más fuerte para mejor legibilidad */
+    background-color: rgba(
+      0,
+      0,
+      0,
+      0.7
+    ); /* Fondo semitransparente detrás del texto */
+    padding: 0.5rem 1rem; /* Espaciado alrededor del texto */
+    border-radius: 5px; /* Esquinas redondeadas opcionales */
   }
 
   .close-menu {
@@ -162,8 +244,37 @@ body {
     z-index: 1001; /* Asegúrate de que esté sobre el menú */
     align-items: end;
     justify-content: end;
-    background-color: rgba(0, 0, 0, 0.5); /* Optional: Add background for visibility */
-    border-radius: 50%; /* Optional: Make it circular */
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo opcional para visibilidad */
+    border-radius: 50%; /* Forma circular opcional */
+  }
+}
+
+@media (max-width: 480px) {
+  .navigation h1 {
+    font-size: 1.2rem;
   }
 
+  .navigation {
+    margin: 1rem;
+    height: 7vh;
+  }
+
+  .navigation nav ul li {
+    font-size: 0.8rem;
+  }
+
+  .menu-icon .line {
+    width: 20px;
+    height: 2px;
+  }
+
+  .menu li a {
+    font-size: 1.4rem;
+  }
+
+  .close-menu {
+    font-size: 1.5rem;
+    top: 1rem;
+    right: 1rem;
+  }
 }
