@@ -1,3 +1,8 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 html,
 body {
   height: 100%;
@@ -10,6 +15,7 @@ body {
   background-attachment: fixed; /* Mantiene la imagen fija al hacer scroll */
   color: #ffffff; /* Ajusta el color del texto para que sea legible */
   position: relative; /* Asegura que los elementos posicionados absolutamente se alineen correctamente */
+  font-family: sans-serif;
 }
 
 body::before {
@@ -95,7 +101,7 @@ footer a:hover {
 }
 
 .menu-icon {
-  display: none;
+  display: flex; /* Siempre muestra el icono del menú hamburguesa */
   flex-direction: column;
   cursor: pointer;
 }
@@ -126,7 +132,7 @@ footer a:hover {
 
 .navigation nav ul {
   list-style: none;
-  display: flex;
+  display: none; /* Oculta el menú por defecto */
   gap: 2rem;
   margin: 0;
   transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
@@ -135,6 +141,8 @@ footer a:hover {
 }
 
 .navigation nav ul.menu.active {
+  display: flex; /* Muestra el menú cuando el icono de hamburguesa está activo */
+  flex-direction: column;
   transform: translateY(0);
   opacity: 1;
 }
@@ -156,11 +164,72 @@ footer a:hover {
 }
 
 .close-menu {
-  display: none;
+  display: none; /* Oculta el botón de cerrar hasta que se active el menú */
 }
 
 .logo {
   background-color: darkblue;
+}
+
+.menu {
+  display: none;
+}
+
+.menu.active {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.95); /* Fondo semitransparente */
+  z-index: 1000; /* Asegura que esté sobre otros elementos */
+  padding: 2rem;
+  box-sizing: border-box;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+
+.menu.menu.active li a {
+  color: white;
+}
+
+.menu li {
+  margin: 1rem 0;
+  text-align: center;
+  width: 100%;
+}
+
+.menu li a {
+  color: white;
+  font-size: 1.6rem;
+  text-decoration: none;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Sombra más fuerte para mejor legibilidad */
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.7
+  ); /* Fondo semitransparente detrás del texto */
+  padding: 0.5rem 1rem; /* Espaciado alrededor del texto */
+  border-radius: 5px; /* Esquinas redondeadas opcionales */
+}
+
+.close-menu {
+  display: flex;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  z-index: 1001; /* Asegúrate de que esté sobre el menú */
+  align-items: end;
+  justify-content: end;
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo opcional para visibilidad */
+  border-radius: 50%; /* Forma circular opcional */
 }
 
 @media (max-width: 1024px) {
@@ -174,6 +243,67 @@ footer a:hover {
 
   .navigation nav ul li {
     font-size: 0.9rem;
+  }
+
+  .menu {
+    display: none;
+  }
+
+  .menu.active {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.95); /* Fondo semitransparente */
+    z-index: 1000; /* Asegura que esté sobre otros elementos */
+    padding: 2rem;
+    box-sizing: border-box;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+  }
+
+  .menu.menu.active li a {
+    color: white;
+  }
+
+  .menu li {
+    margin: 1rem 0;
+    text-align: center;
+    width: 100%;
+  }
+
+  .menu li a {
+    color: white;
+    font-size: 1.6rem;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Sombra más fuerte para mejor legibilidad */
+    background-color: rgba(
+      0,
+      0,
+      0,
+      0.7
+    ); /* Fondo semitransparente detrás del texto */
+    padding: 0.5rem 1rem; /* Espaciado alrededor del texto */
+    border-radius: 5px; /* Esquinas redondeadas opcionales */
+  }
+
+  .close-menu {
+    display: flex;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    z-index: 1001; /* Asegúrate de que esté sobre el menú */
+    align-items: end;
+    justify-content: end;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo opcional para visibilidad */
+    border-radius: 50%; /* Forma circular opcional */
   }
 }
 
@@ -192,10 +322,6 @@ footer a:hover {
     border-radius: 10px;
     padding: 1rem;
     z-index: 10000;
-  }
-
-  .menu-icon {
-    display: flex;
   }
 
   .menu {
