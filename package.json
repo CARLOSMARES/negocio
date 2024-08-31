@@ -2,7 +2,19 @@
   "name": "negocio",
   "type": "module",
   "version": "0.0.1",
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "package.json": [
+      "prettier --write"
+    ]
+  },
   "scripts": {
+    "lint:staged": "lint-staged",
+    "lint:commit": "npx commitlint --edit $1",
+    "precommit": "lint-staged",
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro check && astro build",
@@ -20,6 +32,13 @@
     "typescript": "^5.5.4"
   },
   "devDependencies": {
+    "@commitlint/cli": "19.4.0",
+    "@commitlint/config-conventional": "19.2.2",
+    "@typescript-eslint/eslint-plugin": "^8.3.0",
+    "eslint": "^9.9.1",
+    "husky": "7.0.4",
+    "lint-staged": "15.2.0",
+    "prettier": "3.1.1",
     "sass-embedded": "^1.77.8"
   }
 }
