@@ -14,7 +14,7 @@ export default defineConfig({
   integrations: [
     tailwind(),
     speedInsights({
-      apiKey: "y4zFMccKl5wjR3RzeQjLNxgi", // Reemplaza esto con tu API Key de Vercel Speed Insights
+      apiKey: "0m9Tx7mK7HyX6Rlp017h6chF", // Reemplaza esto con tu API Key de Vercel Speed Insights
     }),
   ],
   serviceWorker: true,
