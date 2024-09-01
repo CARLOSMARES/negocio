@@ -30,6 +30,7 @@ body::before {
 }
 
 .wrapper {
+  margin: 3rem;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -111,7 +112,9 @@ footer a:hover {
   height: 3px;
   background-color: black;
   margin: 3px 0;
-  transition: background-color 0.3s, transform 0.3s;
+  transition:
+    background-color 0.3s,
+    transform 0.3s;
 }
 
 .menu-icon:hover .line {
@@ -135,7 +138,9 @@ footer a:hover {
   display: none; /* Oculta el menú por defecto */
   gap: 2rem;
   margin: 0;
-  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  transition:
+    transform 0.3s ease-in-out,
+    opacity 0.3s ease-in-out;
   transform: translateY(-20px);
   opacity: 0;
 }
@@ -154,7 +159,9 @@ footer a:hover {
 .navigation nav ul li a {
   color: black;
   text-decoration: none;
-  transition: color 0.3s, background-color 0.3s;
+  transition:
+    color 0.3s,
+    background-color 0.3s;
 }
 
 .navigation nav ul li a:hover {
