@@ -8,7 +8,7 @@ body {
   height: 100%;
   margin: 0;
   font-size: 62.5%;
-  background-image: url("/public/fondo.webp");
+  background-image: url("/fondo.webp");
   background-size: cover; /* Ajusta la imagen para cubrir todo el fondo */
   background-position: center; /* Centra la imagen */
   background-repeat: no-repeat; /* Evita que la imagen se repita */
@@ -49,8 +49,8 @@ main p {
 }
 
 footer {
-  background-color: #222;
-  color: #ddd;
+  background-color: black;
+  color: white;
   font-size: 1.4rem;
   padding: 20px;
   display: flex;
@@ -58,15 +58,15 @@ footer {
   align-items: center;
 }
 
-footer a {
-  color: #ff8800;
-  text-decoration: none;
-  transition: color 0.3s;
-}
+// footer a {
+//   color: #ff8800;
+//   text-decoration: none;
+//   transition: color 0.3s;
+// }
 
-footer a:hover {
-  color: white;
-}
+// footer a:hover {
+//   color: white;
+// }
 
 .navigation {
   position: fixed;
