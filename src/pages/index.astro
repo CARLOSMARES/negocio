@@ -1,4 +1,5 @@
 ---
+import Information from "../components/information.astro";
 import Navigation from "../components/navigation.astro";
 import Pie from "../components/pie.astro";
 import "../styles/style.scss";
@@ -13,12 +14,14 @@ import "../styles/style.scss";
     <title>Carlos Mares Dev</title>
   </head>
   <body>
+    <Navigation />
     <div class="wrapper">
-      <Navigation />
-      <main class="ml-2 mr-2"></main>
+      <main class="text-xl p-10">
+        <Information />
+      </main>
     </div>
     <footer class="relative w-full">
       <Pie />
-    </footer>
+    </footer>2
   </body>
 </html>

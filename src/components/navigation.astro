@@ -1,44 +1,31 @@
 ---
+
 ---
 
-<script is:inline>
-  document.addEventListener("DOMContentLoaded", () => {
-    const menuIcon = document.querySelector(".menu-icon");
-    const menu = document.querySelector(".menu");
-    const closeMenu = document.querySelector(".close-menu");
-    const navigation = document.querySelector(".navigation");
-
-    if (menuIcon && menu) {
-      menuIcon.addEventListener("click", () => {
-        menu.classList.toggle("active");
-        menuIcon.classList.toggle("active"); // Alterna la clase en el ícono
-        navigation.classList.toggle("active"); // Alterna la clase en la navegación
-      });
-    }
-
-    closeMenu.addEventListener("click", () => {
-      menu.classList.remove("active");
-      menuIcon.classList.remove("active"); // Remueve la clase en el ícono
-      navigation.classList.remove("active"); // Remueve la clase en la navegación
-    });
-  });
-</script>
-
-<div class="navigation opacity-75">
-  <img src="logo-rbg.png" alt="Logo" class="logo"/>
-  <h1 class="text-3xl">Carlos Mares Dev</h1>
-  <nav>
-    <div class="menu-icon">
-      <div class="line"></div>
-      <div class="line"></div>
-      <div class="line"></div>
-    </div>
-    <ul class="menu">
-      <li class="close-menu">X</li>
-      <li><a href="/">Home</a></li>
-      <li><a href="/servicios">Services</a></li>
-      <li><a href="/nosotros">About Us</a></li>
-      <li><a href="/contacto">Contact</a></li>
+<div
+  class="navigation fixed top-0 left-0 w-full bg-slate-400 shadow-lg flex items-center justify-between p-4 z-50"
+>
+  <img src="logo-rbg.png" alt="Logo" class="logo w-20 h-20" />
+  <h1 class="text-2xl md:text-4xl font-bold text-black">Carlos Mares Dev</h1>
+  <nav class="relative">
+    <ul class="hidden md:flex space-x-6 text-4xl">
+      <li><a href="/" class="text-black hover:text-orange-500">Home</a></li>
+      <li>
+        <a href="/servicios" class="text-black hover:text-orange-500"
+          >Services</a
+        >
+      </li>
+      <li>
+        <a href="/nosotros" class="text-black hover:text-orange-500">About Us</a
+        >
+      </li>
+      <li>
+        <a href="/contacto" class="text-black hover:text-orange-500">Contact</a>
+      </li>
+      <li>
+        <a href="/contacto" class="text-black hover:text-orange-500">Projects</a
+        >
+      </li>
     </ul>
   </nav>
 </div>
