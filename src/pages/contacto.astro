@@ -13,14 +13,73 @@ import "../styles/style.scss";
     <title>Carlos Mares Dev</title>
   </head>
   <body>
-    <div class="wrapper">
+    <div style="min-height: 100vh; padding-top: 10vh;">
       <Navigation />
-      <div class="wrapper">
-        <main class="text-xl p-10"></main>
-      </div>
+      <main class="p-10">
+        <form id="emailform">
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              placeholder="example@example.com"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="mensaje">Message</label>
+            <textarea
+              rows="5"
+              cols="40"
+              name="mensaje"
+              id="mensaje"
+              placeholder="Type your message..."
+              required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Send</button>
+        </form>
+      </main>
     </div>
     <footer>
       <Pie />
     </footer>
   </body>
 </html>
+
+<style is:inline>
+  .form-group {
+    margin-bottom: 2rem;
+  }
+  form {
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    border: black 1px;
+    color: black;
+    padding: 2rem;
+  }
+  form label {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: wheat;
+  }
+  form input,
+  form textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 1px black;
+    border-radius: 0.25rem;
+    background-color: #f7f7f7;
+  }
+  form button {
+    margin-top: 3rem;
+    border: none;
+    background-color: aqua;
+    color: black;
+    padding: 1rem 2rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+</style>
