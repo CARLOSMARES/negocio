@@ -4,7 +4,7 @@ import Pie from "../components/pie.astro";
 import "../styles/style.scss";
 ---
 
-<html lang="es">
+<html lang="es" class="bg-gray-100">
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/logo.png" />
@@ -12,14 +12,23 @@ import "../styles/style.scss";
     <meta name="generator" content={Astro.generator} />
     <title>Carlos Mares Dev</title>
   </head>
-  <body>
-    <div style="min-height: 100vh; padding-top: 10vh;">
+  <body class="min-h-screen flex flex-col">
+    <div class="flex-grow pt-20">
       <Navigation />
-      <main class="p-10">
-        <form id="emailform">
-          <div class="form-group">
-            <label for="email">Email</label>
+      <main class="container mx-auto px-4 py-8 mt-20">
+        <form
+          id="emailform"
+          class="text-2xl max-w-lg mx-auto bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
+        >
+          <div class="mb-4">
+            <label
+              class="block text-gray-700 text-sm font-bold mb-2"
+              for="email"
+            >
+              Email
+            </label>
             <input
+              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               type="email"
               name="email"
               id="email"
@@ -27,17 +36,29 @@ import "../styles/style.scss";
               required
             />
           </div>
-          <div class="form-group">
-            <label for="mensaje">Message</label>
+          <div class="mb-6">
+            <label
+              class="block text-gray-700 text-sm font-bold mb-2"
+              for="mensaje"
+            >
+              Mensaje
+            </label>
             <textarea
+              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
               rows="5"
-              cols="40"
               name="mensaje"
               id="mensaje"
-              placeholder="Type your message..."
+              placeholder="Escribe tu mensaje..."
               required></textarea>
           </div>
-          <button type="submit" class="btn btn-primary">Send</button>
+          <div class="flex items-center justify-between">
+            <button
+              class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+              type="submit"
+            >
+              Enviar
+            </button>
+          </div>
         </form>
       </main>
     </div>
@@ -46,40 +67,3 @@ import "../styles/style.scss";
     </footer>
   </body>
 </html>
-
-<style is:inline>
-  .form-group {
-    margin-bottom: 2rem;
-  }
-  form {
-    font-size: 1.5rem;
-    display: flex;
-    flex-direction: column;
-    width: 40%;
-    border: black 1px;
-    color: black;
-    padding: 2rem;
-  }
-  form label {
-    margin-top: 1.5rem;
-    margin-bottom: 1.5rem;
-    color: wheat;
-  }
-  form input,
-  form textarea {
-    width: 100%;
-    padding: 1rem;
-    border: 1px black;
-    border-radius: 0.25rem;
-    background-color: #f7f7f7;
-  }
-  form button {
-    margin-top: 3rem;
-    border: none;
-    background-color: aqua;
-    color: black;
-    padding: 1rem 2rem;
-    font-size: 1.5rem;
-    cursor: pointer;
-  }
-</style>
