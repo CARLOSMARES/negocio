@@ -1,34 +1,29 @@
 ---
-
+import Card from "./card.astro";
+const descripciondirectorio =
+    "Proyecto creado en Angular y NodeJS para crear un directorio de personas";
 ---
 
-Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores laborum
-quae, sint ducimus sed maxime iusto pariatur deleniti repellendus. Ad rerum qui
-pariatur inventore sequi recusandae minima illo voluptatibus? Ab! Repudiandae
-animi officiis voluptatem laudantium natus. Modi ratione minus cumque, facere
-totam illo similique libero commodi quos distinctio quisquam alias eligendi
-doloremque. Eligendi quam, distinctio aperiam assumenda nostrum aliquid iure!
-Delectus quis tempora, rem omnis facilis id consectetur laudantium ullam autem
-labore ut unde aliquid! Doloremque, quae delectus laborum ex mollitia debitis
-accusantium ab vitae et, magni, ea ratione nostrum. Officiis accusamus, maiores
-ducimus iste officia, necessitatibus sit impedit labore molestias saepe maxime
-dolores voluptatibus laborum enim itaque consequatur similique obcaecati minus
-sint tempore corrupti libero perspiciatis! Doloribus, sint assumenda. Asperiores
-itaque eligendi accusantium! Itaque corrupti eaque vitae suscipit maxime,
-facilis voluptatem similique omnis, culpa ratione, qui cum ipsa quod excepturi
-tempore obcaecati dignissimos minima illum magni porro corporis minus! Possimus
-sed quam quod aspernatur praesentium, saepe nemo mollitia enim unde ex eaque
-ullam sit animi voluptas excepturi architecto accusantium expedita sunt
-molestias dolorum debitis molestiae! Pariatur nisi maxime quia. Eligendi,
-aliquam? Consequatur nesciunt quis accusamus itaque obcaecati quas adipisci
-voluptate, ea facilis, iste ad id. Architecto, repudiandae reiciendis doloribus
-eius atque optio accusantium sit amet ut ullam tempore repellendus? Architecto
-iusto beatae, ea, fuga facere minus aspernatur placeat, assumenda iure sapiente
-nostrum harum quidem consectetur ipsa eveniet praesentium? Numquam quae a modi,
-sed amet sequi eligendi obcaecati fugiat vel! Dolorum commodi sint,
-exercitationem, non aliquid est unde saepe nihil nemo nisi eius ullam, quo aut
-magnam velit repellat necessitatibus qui autem? Suscipit officia, incidunt
-cupiditate maiores cum voluptate nisi. Officiis aliquid hic, sapiente blanditiis
-ea praesentium minima reiciendis quisquam asperiores cupiditate quia soluta
-molestiae tempora nemo eum eligendi optio impedit! Quia, ut cum. A eaque
-corrupti accusamus necessitatibus hic.
+<div class="card">
+    <h1>Carlos Mares DEV</h1>
+    <div class="container">
+        <img src="./fondo.webp" />
+        <p>
+            Somos una empresa dedicada al desarrollo de sistemas de software
+            nuestro eslogan es:
+            <br />
+            <b>"Transformando ideas en soluciones"</b>
+        </p>
+    </div>
+</div>
+<h2>Proyectos</h2>
+<div class="slider">
+    <Card
+        titulo="Directorio"
+        descripcion=`${descripciondirectorio}`
+        textoboton="Visitar Repositorio"
+        urlPage="https://github.com/CARLOSMARES/prueba-tecnica-gptx"
+        urlProduccion=""
+        textoBotonProduccion="Demo"
+    />
+</div>
