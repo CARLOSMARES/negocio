@@ -30,7 +30,7 @@ body::before {
 
 /* Wrapper */
 .wrapper {
-  margin: 1.5rem;
+  margin-top: 5rem;
   display: flex;
   flex-direction: column;
   min-height: 100dvh;
@@ -61,6 +61,7 @@ footer {
 
 /* Navegación */
 .navigation {
+
   position: fixed;
   width: 100%;
   height: 15dvh;
@@ -70,12 +71,18 @@ footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
 
-.navigation h1 {
-  color: black;
-  flex-grow: 1;
-  margin: 0;
+  h1 {
+    flex-grow: 1;
+    margin: 40px;
+  }
+
+  .logo {
+    border-radius: 50%;
+    margin-right: 0;
+    padding-right: 0;
+  }
+
 }
 
 .card {
@@ -108,6 +115,7 @@ footer {
     }
   }
 }
+
 
 h2 {
   font-size: 5rem;
