@@ -3,7 +3,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-size: 62.5%;
 }
 
 html,
@@ -16,6 +15,7 @@ body {
   position: relative;
   font-family: sans-serif;
   background-color: beige;
+  font-size: 62.5%;
 }
 
 body::before {
