@@ -1,0 +1,110 @@
+---
+import { marked } from "marked";
+import Navigation from "../components/navigation.astro";
+import Pie from "../components/pie.astro";
+import "../styles/style.scss";
+
+const markdown = `## Términos y Condiciones
+
+**Última actualización: 19 de Septiembre de 2024**
+
+Estos Términos y Condiciones rigen el uso de [carlosmares.dev](https://carlosmares.dev) (en adelante, "el Servicio"). Al acceder o utilizar el Servicio, aceptas cumplir con estos Términos y Condiciones. Si no estás de acuerdo con alguno de estos términos, te rogamos que no utilices el Servicio.
+
+## 1. Aceptación de los Términos
+
+Al utilizar el Servicio, afirmas que tienes al menos 18 años o que has obtenido el consentimiento de un padre o tutor legal.
+
+## 2. Modificaciones a los Términos
+
+Nos reservamos el derecho de modificar estos Términos y Condiciones en cualquier momento. Los cambios serán efectivos una vez publicados en esta página. Se recomienda revisar periódicamente los Términos para estar al tanto de cualquier cambio.
+
+## 3. Uso del Servicio
+
+Te comprometes a utilizar el Servicio de manera legal y ética. No podrás:
+
+- Utilizar el Servicio para fines ilícitos.
+- Publicar o transmitir contenido que sea difamatorio, obsceno o que infrinja derechos de propiedad intelectual.
+- Intentar acceder a áreas no autorizadas del Servicio.
+
+## 4. Propiedad Intelectual
+
+Todo el contenido y materiales del Servicio, incluidos, entre otros, textos, gráficos, logotipos, imágenes y software, son propiedad de **Carlos Mares Ignacio Olano Mares** (Alias **Carlos Mares Dev**) y están protegidos por las leyes de derechos de autor y propiedad intelectual.
+
+## 5. Limitación de Responsabilidad
+
+En la medida máxima permitida por la ley, **Carlos Mares Dev** no será responsable de ningún daño indirecto, incidental, especial o consecuente que surja del uso o la imposibilidad de uso del Servicio.
+
+## 6. Indemnización
+
+Aceptas indemnizar y eximir de responsabilidad a **Carlos Mares Dev** y sus afiliados de cualquier reclamo, pérdida, daño o gasto que surja de tu uso del Servicio o de tu incumplimiento de estos Términos.
+
+## 7. Ley Aplicable
+
+Estos Términos y Condiciones se regirán e interpretarán de acuerdo con las leyes de **Mexico**.
+
+## 8. Contacto
+
+Si tienes alguna pregunta sobre estos Términos y Condiciones, por favor contáctanos a [Email de Soporte](mailto:developer@carlosmares.dev).`;
+
+const renderedMarkdown = marked(markdown);
+---
+
+<html lang="es">
+    <head>
+        <meta charset="utf-8" />
+        <link rel="icon" type="image/svg+xml" href="/logo.png" />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="generator" content={Astro.generator} />
+        <title>Carlos Mares Dev</title>
+    </head>
+    <body>
+        <div class="wrapper">
+            <Navigation />
+            <div class="wrapper">
+                <!-- Usa set:html para inyectar el HTML generado por marked -->
+                <div set:html={renderedMarkdown} />
+                <footer>
+                    <Pie />
+                </footer>
+            </div>
+        </div>
+    </body>
+</html>
+
+<style is:inline>
+    body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        background-color: #f5f5dc; /* Un color de fondo más claro */
+        color: #333; /* Color del texto más oscuro */
+    }
+
+    h1,
+    h2,
+    h3 {
+        font-weight: bold;
+        color: #222;
+    }
+
+    h1 {
+        font-size: 3rem; /* Tamaño ajustado para el título principal */
+    }
+
+    h2 {
+        font-size: 2.75rem;
+    }
+
+    h3 {
+        font-size: 2.5rem;
+    }
+
+    p,
+    li,
+    a {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+    strong {
+        font-size: 2.3rem;
+    }
+</style>
