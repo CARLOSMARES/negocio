@@ -61,7 +61,6 @@ footer {
 
 /* Navegación */
 .navigation {
-
   width: 100%;
   height: 15dvh;
   padding: 0 2rem;
@@ -71,32 +70,31 @@ footer {
   justify-content: space-between;
   align-items: center;
   position: relative;
+}
 
-  h1 {
-    flex-grow: 1;
-    margin: 40px;
-  }
+.navigation h1 {
+  flex-grow: 1;
+  margin: 40px;
+}
 
-  .logo {
-    border-radius: 50%;
-    margin-right: 0;
-    padding-right: 0;
-    width: 5vw;
-    height: auto;
-    background-color: darkblue;
-  }
+.logo {
+  border-radius: 50%;
+  margin-right: 0;
+  padding-right: 0;
+  width: 5vw;
+  height: auto;
+  background-color: darkblue;
+}
 
-  nav ul {
-    flex-direction: column;
-    gap: 1rem;
-  }
+.navigation nav ul {
+  flex-direction: column;
+  gap: 1rem;
+}
 
-  nav ul li a:hover {
-    color: black;
-    background-color: rgba(255, 136, 0, 0.1);
-    border-radius: 5px;
-  }
-
+.navigation nav ul li a:hover {
+  color: black;
+  background-color: rgba(255, 136, 0, 0.1);
+  border-radius: 5px;
 }
 
 h2 {
@@ -104,4 +102,85 @@ h2 {
   display: flex;
   justify-content: center;
   margin-bottom: 3rem;
+}
+
+/* Media Queries */
+
+/* Pantallas pequeñas (movil, menos de 600px) */
+@media (max-width: 599px) {
+  .wrapper {
+    margin-top: 2rem;
+    padding-top: 5vh;
+  }
+
+  main p {
+    font-size: 1.8rem;
+  }
+
+  footer {
+    font-size: 1.2rem;
+    padding: 10px;
+  }
+
+  .navigation {
+    flex-direction: column;
+    height: auto;
+    padding: 1rem;
+  }
+
+  h2 {
+    font-size: 3rem;
+  }
+}
+
+/* Pantallas medianas (tabletas, entre 600px y 1024px) */
+@media (min-width: 600px) and (max-width: 1023px) {
+  .wrapper {
+    margin-top: 4rem;
+    padding-top: 8vh;
+  }
+
+  main p {
+    font-size: 2rem;
+  }
+
+  footer {
+    font-size: 1.3rem;
+    padding: 15px;
+  }
+
+  .navigation {
+    height: 12dvh;
+    padding: 1.5rem;
+  }
+
+  h2 {
+    font-size: 4rem;
+  }
+}
+
+/* Pantallas grandes (desktops, 1024px en adelante) */
+@media (min-width: 1024px) {
+  .wrapper {
+    margin-top: 5rem;
+    padding-top: 10dvh;
+  }
+
+  main p {
+    font-size: 2.2rem;
+  }
+
+  footer {
+    font-size: 1.4rem;
+    padding: 20px;
+  }
+
+  .navigation {
+    height: 15dvh;
+    padding: 2rem;
+  }
+
+  h2 {
+    font-size: 5rem;
+  }
 }
