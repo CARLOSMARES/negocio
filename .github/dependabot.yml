@@ -1,7 +1,31 @@
 version: 2
 updates:
-  - package-ecosystem: "npm" # Ecosistema de paquetes
-    directory: "/" # Ubicación de los manifiestos del paquete
+  - package-ecosystem: "npm" # Ecosistema de paquetes (Node.js)
+    directory: "/" # Ubicación de los archivos package.json y package-lock.json
     schedule:
-      interval: "daily" # Cambiado a diario
-      time: "00:00" # Hora a medianoche en UTC
+      interval: "daily" # Frecuencia de las actualizaciones: diaria
+      time: "00:00" # Hora de ejecución (medianoche UTC)
+    open-pull-requests-limit: 5 # Límite de PRs abiertos simultáneamente
+    rebase-strategy: "auto" # Estrategia de rebase automático para mantener las PRs actualizadas
+    labels:
+      - "dependencies" # Etiqueta para identificar PRs de dependencias
+      - "npm"
+    reviewers:
+      - "equipo-backend" # Usuarios o equipos que revisarán los PRs
+    assignees:
+      - "usuario-responsable" # Usuario asignado a los PRs
+    commit-message:
+      prefix: "chore" # Prefijo del mensaje de commit (ejemplo: chore(deps): ...)
+      include: "scope" # Incluir el ámbito de la dependencia en el mensaje
+    milestone: 1 # Asignar PRs al hito número 1 (ajusta según tus hitos)
+    ignore:
+      - dependency-name: "package-que-ignorar" # Ignorar actualizaciones para este paquete específico
+        versions: ["1.x"] # Especificar versiones a ignorar
+    # Solo aplicar actualizaciones de seguridad prioritarias
+    # Dependabot ya maneja las actualizaciones de seguridad por separado,
+    # pero puedes asegurarte de que se incluyan en el flujo diario
+    allow:
+      - dependency-type: "direct" # Permitir solo dependencias directas
+    security-updates: true # Habilitar actualizaciones de seguridad prioritarias
+    # Opcional: definir la estrategia de versionado
+    versioning-strategy: "auto" # Dependabot determinará la mejor estrategia de versionado
