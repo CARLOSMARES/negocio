@@ -58,16 +58,11 @@ const renderedMarkdown = marked(markdown);
         <title>Carlos Mares Dev</title>
     </head>
     <body>
-        <div class="wrapper">
-            <Navigation />
-            <div class="wrapper">
-                <!-- Usa set:html para inyectar el HTML generado por marked -->
-                <div set:html={renderedMarkdown} />
-                <footer>
-                    <Pie />
-                </footer>
-            </div>
-        </div>
+        <Navigation />
+        <div class="text-center" set:html={renderedMarkdown} />
+        <footer>
+            <Pie />
+        </footer>
     </body>
 </html>
 
@@ -75,8 +70,6 @@ const renderedMarkdown = marked(markdown);
     body {
         font-family: Arial, sans-serif;
         line-height: 1.6;
-        background-color: #f5f5dc; /* Un color de fondo más claro */
-        color: #333; /* Color del texto más oscuro */
     }
 
     h1,

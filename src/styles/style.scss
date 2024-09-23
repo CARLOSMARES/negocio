@@ -1,3 +1,65 @@
+// Importación de Tipografías
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap');
+
+// Variables SASS
+$color-primario: #1E3A8A;
+$color-secundario: #10B981;
+$color-fondo: #FFFFFF;
+$color-texto: #212529;
+$color-neutro-claro: #F3F4F6;
+$color-neutro-oscuro: #374151;
+$color-footer: #000000;
+$color-footer-texto: #FFFFFF;
+
+// Tipografías
+$fuente-principal: 'Montserrat', sans-serif;
+$fuente-secundaria: 'Open Sans', sans-serif;
+
+// Espaciado
+$padding-base: 2rem;
+$margin-base: 2rem;
+
+// Tamaños de Fuente
+$font-size-base: 1.6rem;
+$font-size-lg: 2.2rem;
+$font-size-xl: 3rem;
+$font-size-xxl: 5rem;
+
+// Otros
+$border-radius: 5px;
+$transition: all 0.3s ease;
+
+// Asignación a Variables CSS (Opcional)
+:root {
+  /* Colores */
+  --color-primario: #{$color-primario};
+  --color-secundario: #{$color-secundario};
+  --color-fondo: #{$color-fondo};
+  --color-texto: #{$color-texto};
+  --color-neutro-claro: #{$color-neutro-claro};
+  --color-neutro-oscuro: #{$color-neutro-oscuro};
+  --color-footer: #{$color-footer};
+  --color-footer-texto: #{$color-footer-texto};
+
+  /* Tipografías */
+  --fuente-principal: #{$fuente-principal};
+  --fuente-secundaria: #{$fuente-secundaria};
+
+  /* Espaciado */
+  --padding-base: #{$padding-base};
+  --margin-base: #{$margin-base};
+
+  /* Tamaños de Fuente */
+  --font-size-base: #{$font-size-base};
+  --font-size-lg: #{$font-size-lg};
+  --font-size-xl: #{$font-size-xl};
+  --font-size-xxl: #{$font-size-xxl};
+
+  /* Otros */
+  --border-radius: #{$border-radius}px;
+  --transition: #{$transition};
+}
+
 /* Global */
 * {
   margin: 0;
@@ -8,14 +70,11 @@
 html,
 body {
   height: 100%;
-  margin: 0;
   font-size: 62.5%;
-  background-color: rgb(245, 245, 245);
-  color: rgb(33, 37, 41);
+  background-color: $color-fondo;
+  color: $color-texto;
+  font-family: $fuente-secundaria;
   position: relative;
-  font-family: sans-serif;
-  background-color: beige;
-  font-size: 62.5%;
 }
 
 body::before {
@@ -30,154 +89,420 @@ body::before {
 
 /* Wrapper */
 .wrapper {
-  margin-top: 5rem;
   display: flex;
   flex-direction: column;
-  min-height: 100dvh;
-  padding-top: 10dvh;
+  min-height: 100vh;
 }
 
 main {
   flex: 1;
+  padding: $padding-base;
 }
 
 main p {
-  font-size: 2.2rem;
+  font-size: $font-size-lg;
   line-height: 1.6;
   max-width: 800px;
   margin: 0 auto;
-}
-
-/* Footer */
-footer {
-  background-color: black;
-  color: white;
-  font-size: 1.4rem;
-  padding: 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  font-family: $fuente-secundaria;
 }
 
 /* Navegación */
 .navigation {
-
-  position: fixed;
   width: 100%;
   height: 15dvh;
-  padding: 0 2rem;
+  padding: 0 $padding-base;
+  background-color: $color-fondo;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   z-index: 1000;
   display: flex;
   justify-content: space-between;
   align-items: center;
-
-  h1 {
-    flex-grow: 1;
-    margin: 40px;
-  }
-
-  .logo {
-    border-radius: 50%;
-    margin-right: 0;
-    padding-right: 0;
-  }
-
+  position: relative;
+  /* Fijo al hacer scroll */
+  top: 0;
+  left: 0;
 }
 
-.card {
-  // border: 2px black solid;
-  height: auto;
-  padding: 1.5rem;
-  background-color: white;
-  margin-bottom: 3rem;
-
-  h1 {
-    text-align: center;
-    font-size: 3rem;
-  }
-
-  .container {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-
-    img {
-      width: 30%;
-      height: 30dvh;
-    }
-
-    p {
-      b {
-        font-size: 3rem;
-        color: black;
-      }
-    }
-  }
-}
-
-
-h2 {
-  font-size: 5rem;
+.logo {
+  border-radius: 50%;
+  width: 5vw;
+  height: 5vw;
+  background-color: $color-primario;
   display: flex;
+  align-items: center;
   justify-content: center;
+}
+
+.navigation nav ul {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+.navigation nav ul li a {
+  text-decoration: none;
+  color: $color-texto;
+  font-family: $fuente-principal;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-radius: $border-radius;
+  transition: $transition;
+}
+
+.navigation nav ul li a:hover {
+  color: $color-fondo;
+  background-color: darken($color-secundario, 10%);
+}
+
+/* Botón de CTA */
+.cta {
+  background-color: $color-secundario;
+  color: $color-fondo;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: $border-radius;
+  text-decoration: none;
+  font-family: $fuente-principal;
+  font-weight: 700;
+  transition: $transition;
+}
+
+.cta:hover {
+  background-color: darken($color-secundario, 10%);
+}
+
+/* Hero Section */
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: url('path-to-your-hero-image.jpg') center/cover no-repeat;
+  color: $color-fondo;
+  text-align: center;
+  padding: $padding-base;
+}
+
+.hero h1 {
+  font-family: $fuente-principal;
+  font-size: $font-size-xxl;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: $font-size-lg;
+  margin-bottom: 2rem;
+  max-width: 600px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.btn-primary,
+.btn-secondary {
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: $border-radius;
+  cursor: pointer;
+  font-family: $fuente-principal;
+  font-weight: 700;
+  transition: $transition;
+}
+
+.btn-primary {
+  background-color: $color-primario;
+  color: $color-fondo;
+}
+
+.btn-primary:hover {
+  background-color: darken($color-primario, 10%);
+}
+
+.btn-secondary {
+  background-color: $color-secundario;
+  color: $color-fondo;
+}
+
+.btn-secondary:hover {
+  background-color: darken($color-secundario, 10%);
+}
+
+/* Servicios */
+.services {
+  padding: $padding-base;
+  background-color: $color-neutro-claro;
+}
+
+.services h2 {
+  font-family: $fuente-principal;
+  font-size: $font-size-xl;
+  text-align: center;
   margin-bottom: 3rem;
 }
 
-.slider {
-  display: flex;
-  gap: 30px;
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
 }
 
-/* Responsive navigation */
-@media only screen and (max-width: 768px) {
+.service-item {
+  background-color: $color-fondo;
+  padding: 2rem;
+  border-radius: $border-radius;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: $transition;
+}
+
+.service-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+}
+
+.service-item img {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 1.5rem;
+}
+
+.service-item h3 {
+  font-family: $fuente-principal;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.service-item p {
+  font-family: $fuente-secundaria;
+  font-size: 1.6rem;
+  color: $color-neutro-oscuro;
+}
+
+/* Footer */
+footer {
+  background-color: $color-footer;
+  color: $color-footer-texto;
+  font-size: 1.4rem;
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.footer-columns {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.footer-column {
+  flex: 1;
+  min-width: 200px;
+}
+
+.footer-column h4 {
+  font-family: $fuente-principal;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.footer-column p,
+.footer-column ul,
+.footer-column a {
+  font-family: $fuente-secundaria;
+  font-size: 1.4rem;
+  line-height: 1.6;
+}
+
+.footer-column ul {
+  list-style: none;
+}
+
+.footer-column ul li a {
+  color: $color-footer-texto;
+  text-decoration: none;
+  transition: $transition;
+}
+
+.footer-column ul li a:hover {
+  color: $color-secundario;
+}
+
+.social-icons {
+  display: flex;
+  gap: 1rem;
+}
+
+.social-icons a img {
+  width: 24px;
+  height: 24px;
+  transition: $transition;
+}
+
+.social-icons a:hover img {
+  transform: scale(1.1);
+}
+
+.footer-bottom {
+  width: 100%;
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 1.2rem;
+}
+
+/* Media Queries */
+
+/* Pantallas pequeñas (móviles, menos de 600px) */
+@media (max-width: 599px) {
+  body {
+    font-size: 50%;
+    /* 1rem = 8px */
+  }
+
   .navigation {
-    position: relative;
+    flex-direction: column;
     height: auto;
-    padding: 20px;
+    padding: 1rem;
   }
 
   .navigation nav ul {
-    display: none;
     flex-direction: column;
+    align-items: center;
     gap: 1rem;
-  }
-}
-
-@media only screen and (min-width: 769px) {
-  .close-menu {
-    display: none;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .close-menu {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background-color: red;
-    padding: 5px;
-    border-radius: 50%;
-    cursor: pointer;
   }
 
   .logo {
     width: 10vw;
-    height: auto;
-    background-color: darkblue;
+    height: 10vw;
+    margin-bottom: 1rem;
+  }
+
+  main p {
+    font-size: 1.8rem;
+  }
+
+  .hero h1 {
+    font-size: 3rem;
+  }
+
+  .hero p {
+    font-size: 1.6rem;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    padding: 0.8rem 1.5rem;
+    font-size: 1.4rem;
+  }
+
+  footer {
+    font-size: 1.2rem;
+    padding: 1rem;
+  }
+
+  .footer-columns {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-column {
+    text-align: center;
+  }
+
+  .services h2 {
+    font-size: 3rem;
   }
 }
 
-@media only screen and (min-width: 769px) {
-  .navigation nav ul li a:hover {
-    color: #ff8800;
-    background-color: rgba(255, 136, 0, 0.1);
-    border-radius: 5px;
+/* Pantallas medianas (tabletas, entre 600px y 1024px) */
+@media (min-width: 600px) and (max-width: 1023px) {
+  body {
+    font-size: 56.25%;
+    /* 1rem = 9px */
   }
 
-  .logo {
-    width: 5vw;
-    height: auto;
-    background-color: darkblue;
+  .navigation {
+    height: 12dvh;
+    padding: 1.5rem;
+  }
+
+  .navigation nav ul {
+    gap: 1.5rem;
+  }
+
+  main p {
+    font-size: 2rem;
+  }
+
+  .hero h1 {
+    font-size: 4rem;
+  }
+
+  .hero p {
+    font-size: 1.8rem;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    padding: 1rem 2rem;
+    font-size: 1.6rem;
+  }
+
+  footer {
+    font-size: 1.3rem;
+    padding: 1.5rem;
+  }
+
+  .services h2 {
+    font-size: 4rem;
+  }
+}
+
+/* Pantallas grandes (desktops, 1024px en adelante) */
+@media (min-width: 1024px) {
+  body {
+    font-size: 62.5%;
+    /* 1rem = 10px */
+  }
+
+  .navigation {
+    height: 15dvh;
+    padding: 2rem;
+  }
+
+  .navigation nav ul {
+    gap: 2rem;
+  }
+
+  main p {
+    font-size: 2.2rem;
+  }
+
+  .hero h1 {
+    font-size: $font-size-xxl;
+  }
+
+  .hero p {
+    font-size: $font-size-lg;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    padding: 1rem 2rem;
+    font-size: 1.6rem;
+  }
+
+  footer {
+    font-size: 1.4rem;
+    padding: 2rem;
+  }
+
+  .services h2 {
+    font-size: $font-size-xl;
   }
 }
