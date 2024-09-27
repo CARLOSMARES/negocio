@@ -1,12 +1,24 @@
 ---
 import Navigation from "../components/navigation.astro";
 import Pie from "../components/pie.astro";
+import "../styles/style.scss";
 ---
 
-<Navigation />
-<div class="wrapper">
-    <main></main>
-</div>
-<footer class="relative w-full">
-    <Pie />
-</footer>
+<html lang="es">
+    <head>
+        <meta charset="utf-8" />
+        <link rel="icon" type="image/svg+xml" href="/logo.png" />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="generator" content={Astro.generator} />
+        <title>Carlos Mares Dev</title>
+    </head>
+    <body>
+        <Navigation />
+        <div class="wrapper">
+            <main></main>
+        </div>
+        <footer class="relative w-full">
+            <Pie />
+        </footer>
+    </body>
+</html>
