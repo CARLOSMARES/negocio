@@ -1,4 +1,5 @@
 ---
+import Card from "../components/card.astro";
 import Home from "../components/home.astro";
 import Navigation from "../components/navigation.astro";
 import Pie from "../components/pie.astro";
@@ -18,6 +19,14 @@ import "../styles/style.scss";
     <div class="wrapper">
       <main>
         <Home />
+        <div style="margin-left: 30%; margin-top:4%">
+          <Card
+            hideImg={false}
+            titulo="Servicios Especializados de Desarrollo de Software"
+            texto="Soluciones a medida que impulsan la eficiencia y competitividad de su negocio. Innovación, integración perfecta y soporte continuo para llevar su empresa al siguiente nivel."
+            url="/serviciodev"
+          />
+        </div>
       </main>
     </div>
     <footer class="relative w-full">
