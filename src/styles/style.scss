@@ -29,36 +29,9 @@ $font-size-xxl: 5rem;
 $border-radius: 5px;
 $transition: all 0.3s ease;
 
-// Asignación a Variables CSS (Opcional)
-:root {
-  /* Colores */
-  --color-primario: #{$color-primario};
-  --color-secundario: #{$color-secundario};
-  --color-fondo: #{$color-fondo};
-  --color-texto: #{$color-texto};
-  --color-neutro-claro: #{$color-neutro-claro};
-  --color-neutro-oscuro: #{$color-neutro-oscuro};
-  --color-footer: #{$color-footer};
-  --color-footer-texto: #{$color-footer-texto};
-
-  /* Tipografías */
-  --fuente-principal: #{$fuente-principal};
-  --fuente-secundaria: #{$fuente-secundaria};
-
-  /* Espaciado */
-  --padding-base: #{$padding-base};
-  --margin-base: #{$margin-base};
-
-  /* Tamaños de Fuente */
-  --font-size-base: #{$font-size-base};
-  --font-size-lg: #{$font-size-lg};
-  --font-size-xl: #{$font-size-xl};
-  --font-size-xxl: #{$font-size-xxl};
-
-  /* Otros */
-  --border-radius: #{$border-radius}px;
-  --transition: #{$transition};
-}
+// Ajustes de color usando `adjust-color`
+$color-secundario-darken: adjust-color($color-secundario, $lightness: -10%);
+$color-primario-darken: adjust-color($color-primario, $lightness: -10%);
 
 /* Global */
 * {
@@ -152,7 +125,7 @@ main p {
 
 .navigation nav ul li a:hover {
   color: $color-fondo;
-  background-color: darken($color-secundario, 10%);
+  background-color: $color-secundario-darken;
 }
 
 /* Botón de CTA */
@@ -169,7 +142,7 @@ main p {
 }
 
 .cta:hover {
-  background-color: darken($color-secundario, 10%);
+  background-color: $color-secundario-darken;
 }
 
 /* Hero Section */
@@ -219,7 +192,7 @@ main p {
 }
 
 .btn-primary:hover {
-  background-color: darken($color-primario, 10%);
+  background-color: $color-primario-darken;
 }
 
 .btn-secondary {
@@ -228,7 +201,7 @@ main p {
 }
 
 .btn-secondary:hover {
-  background-color: darken($color-secundario, 10%);
+  background-color: $color-secundario-darken;
 }
 
 /* Servicios */
