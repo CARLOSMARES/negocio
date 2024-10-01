@@ -1,0 +1,6 @@
+# Custom Dictionary Words
+astrojs
+fontsource
+montserrat
+remixicon
+tailwindcss
