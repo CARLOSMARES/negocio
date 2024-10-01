@@ -1,0 +1,5 @@
+/* se utilizar para solo mostrar el borde de un texto */
+.border-text-lines {
+  color: transparent;
+  -webkit-text-stroke: 2px white;
+}

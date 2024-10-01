@@ -1,13 +1,15 @@
 ---
-import Navigation from "../components/navigation.astro";
-import Pie from "../components/pie.astro";
-import "../styles/style.scss";
+import Stars from "@/components/cards/Stars.astro";
+import Layout from "@/layouts/Layout.astro";
 ---
 
-<Navigation />
-<div class="wrapper">
-    <main></main>
-</div>
-<footer class="relative w-full">
-    <Pie />
-</footer>
+<Layout
+  title="Carlos Mares Dev"
+  description="Somos una empresa de desarrollo web, asesorías, auditorias de tú web y también ofrecemos soluciones de software para tú empreza o negocio."
+>
+  <section class="flex flex-wrap w-full">
+    <Stars />
+    <Stars />
+    <Stars />
+  </section>
+</Layout>
