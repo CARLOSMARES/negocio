@@ -2,6 +2,15 @@
 import Anchors from "./header/Anchors.astro";
 
 const url = Astro.url.pathname;
+const format = url.slice(1);
+
+var URL;
+
+if (format.slice(-1) === "/") {
+  URL = format.slice(0, -1);
+} else {
+  URL = format;
+}
 ---
 
 <header
@@ -10,7 +19,7 @@ const url = Astro.url.pathname;
   <h1 class="flex w-fit">
     /
     <span class="ml-0.5">
-      {url === "/" ? "inicio" : url.slice(1)}
+      {URL === "" ? "inicio" : URL}
     </span>
   </h1>
   <nav class="w-full flex justify-end items-center space-x-3">
