@@ -3,3 +3,19 @@
   color: transparent;
   -webkit-text-stroke: 2px white;
 }
+
+.texto-titulo {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  font-size: 2rem;
+  color: red;
+}
+
+.texto-subtitulo {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  font-size: 1.5rem;
+  color: white;
+}
