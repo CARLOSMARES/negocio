@@ -1,5 +1,5 @@
 ---
-import Anchors from "./header/Anchors.astro";
+import Anchors from "./Anchors.astro";
 
 const url = Astro.url.pathname;
 const format = url.slice(1);
@@ -17,14 +17,55 @@ format.slice(-1) === "/" ? (URL = format.slice(0, -1)) : (URL = format);
       {URL === "" ? "inicio" : URL}
     </span>
   </h1>
-  <nav class="w-full flex justify-end items-center space-x-3">
+  <nav
+    class="w-full flex justify-end items-center space-x-3 max-[800px]:hidden"
+  >
     {
       Astro.url.pathname !== "/" ? (
-        <Anchors href="/" title="Inicio" icon="home-2" />
+        <Anchors href="/" title="Inicio" icon="home-2" type="header" />
       ) : null
     }
-    <Anchors href="/proyectos" title="Proyectos" icon="bookmark" />
-    <Anchors href="/testimonios" title="Testimonios" icon="chat-1" />
-    <Anchors href="/contacto" title="Contacto" icon="inbox" />
+    <Anchors
+      href="/proyectos"
+      title="Proyectos"
+      icon="bookmark"
+      type="header"
+    />
+    <Anchors
+      href="/testimonios"
+      title="Testimonios"
+      icon="chat-1"
+      type="header"
+    />
+    <Anchors href="/contacto" title="Contacto" icon="inbox" type="header" />
   </nav>
+
+  <span class="hidden max-[800px]:flex w-full justify-end items-center">
+    <i
+      class="ri-menu-line text-[45px] w-[50px] h-[50px] flex justify-center items-center"
+      id="open-menu"></i>
+  </span>
 </header>
+
+<script>
+  const OpenMenu = document.getElementById("open-menu") as HTMLElement;
+  const CloseMenu = document.getElementById("close-menu") as HTMLElement;
+  const Menu = document.querySelector("menu") as HTMLMenuElement;
+  const Anchors = document.querySelectorAll(
+    "a"
+  ) as NodeListOf<HTMLAnchorElement>;
+
+  OpenMenu.addEventListener("click", () => {
+    Menu.style.display = "flex";
+  });
+
+  CloseMenu.addEventListener("click", () => {
+    Menu.style.display = "none";
+  });
+
+  Anchors.forEach((e) => {
+    e.addEventListener("click", () => {
+      Menu.style.display = "none";
+    });
+  });
+</script>
