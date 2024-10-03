@@ -1,0 +1,24 @@
+---
+interface Props {
+  href?: string;
+  title?: string;
+  icon?: string;
+  type: "header" | "menu";
+}
+
+const { href, title, icon, type } = Astro.props;
+
+var DataClassName;
+
+type === "header"
+  ? (DataClassName = "px-4 py-2 text-[14px] ")
+  : (DataClassName = "w-full h-[60px] text-[17px] ");
+---
+
+<a
+  href={href}
+  class=`flex justify-center items-center ${DataClassName} border border-[#181818] rounded-[4px] hover:bg-[#111111]`
+>
+  <i class=`ri-${icon}-fill font-normal mr-3`></i>
+  {title}
+</a>
