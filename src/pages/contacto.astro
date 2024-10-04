@@ -2,4 +2,40 @@
 import Layout from  "@layouts/Layout.astro";
 ---
 <Layout>
+    <form id="contact-form">
+        <label>
+            Nombre
+        </label>
+        <input type="text" id="name" required/>
+        <label>
+            Email
+        </label>
+        <input type="email" id="email" required/>
+        <label>
+            Mensaje
+        </label>
+        <textarea id="mensaje" maxlength="5000" rows="10" cols="50" autocomplete="off" required/>
+        <input type="submit" class="enviar" />
+    </form>
 </Layout>
+
+<style is:inline>
+    form{
+        display: grid;
+        width: 50%;
+        justify-content: center;
+    }
+    input{
+        color: black;
+    }
+    textarea{
+        color: black;
+        resize:none;
+    }
+    .enviar{
+        border: 1px solid;
+        margin-top: 4%;
+        color: white;
+        padding: 2px;
+    }
+</style>
