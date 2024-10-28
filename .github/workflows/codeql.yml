@@ -1,14 +1,3 @@
-# For most projects, this workflow file will not need changing; you simply need
-# to commit it to your repository.
-#
-# You may wish to alter this file to override the set of languages analyzed,
-# or to provide custom queries or build logic.
-#
-# ******** NOTE ********
-# We have attempted to detect the languages in your repository. Please check
-# the `language` matrix defined below to confirm you have the correct set of
-# supported CodeQL languages.
-#
 name: "CodeQL Advanced"
 
 on:
@@ -45,7 +34,13 @@ jobs:
       run: |
         curl -fsSL https://bun.sh/install | bash
         echo 'Adding Bun to PATH...'
-        echo 'export PATH="$HOME/.bun/bin:$PATH"' >> $GITHUB_ENV
+        echo "$HOME/.bun/bin" >> $GITHUB_PATH  # Usar $GITHUB_PATH para exportar
+
+    # Verificar que Bun está instalado
+    - name: Verify Bun installation
+      run: |
+        echo 'Verifying Bun installation...'
+        bun --version  # Verificar si bun está disponible
 
     # Initializes the CodeQL tools for scanning.
     - name: Initialize CodeQL
