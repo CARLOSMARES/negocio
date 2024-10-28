@@ -34,11 +34,18 @@ jobs:
       matrix:
         include:
         - language: javascript-typescript
-          build-mode: none
+          build-mode: none  # Cambiado a 'none'
 
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
+
+    # Install Bun
+    - name: Install Bun
+      run: |
+        curl -fsSL https://bun.sh/install | bash
+        echo 'Adding Bun to PATH...'
+        echo 'export PATH="$HOME/.bun/bin:$PATH"' >> $GITHUB_ENV
 
     # Initializes the CodeQL tools for scanning.
     - name: Initialize CodeQL
@@ -47,7 +54,7 @@ jobs:
         languages: ${{ matrix.language }}
         build-mode: ${{ matrix.build-mode }}
 
-    # Build step for Bun (will be automatically called)
+    # Build step for Bun
     - name: Build with Bun
       run: |
         echo 'Installing packages with Bun...'
