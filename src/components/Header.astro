@@ -12,60 +12,65 @@ format.slice(-1) === "/" ? (URL = format.slice(0, -1)) : (URL = format);
   class="w-full fixed max-w-[1000px] h-[70px] flex justify-start items-center bg-[#0c0c0c] border-b border-[#181818] px-1.5"
 >
   <h1 class="flex w-fit ml-2">
-    /
+    <!-- /
     <span class="ml-0.5">
       {URL === "" ? "inicio" : URL}
     </span>
+  </h1> -->
+    <div class="empresa">
+      <img src="logo-CMDEV.png" alt="logo" />
+      <span>Carlos Mares Dev</span>
+    </div>
+    <nav
+      class="w-full flex justify-end items-center space-x-3 max-[800px]:hidden"
+    >
+      <!-- {
+        Astro.url.pathname !== "/" ? ( -->
+      <Anchors href="/" title="Inicio" icon="home-2" type="header" />
+      <!-- ) : null
+      } -->
+      <Anchors
+        href="/proyectos"
+        title="Proyectos"
+        icon="bookmark"
+        type="header"
+      />
+      <Anchors
+        href="/testimonios"
+        title="Testimonios"
+        icon="chat-1"
+        type="header"
+      />
+      <Anchors href="/contacto" title="Contacto" icon="inbox" type="header" />
+    </nav>
+
+    <span class="hidden max-[800px]:flex w-full justify-end items-center">
+      <i
+        class="ri-menu-line text-[45px] w-[50px] h-[50px] flex justify-center items-center"
+        id="open-menu"></i>
+    </span>
   </h1>
-  <nav
-    class="w-full flex justify-end items-center space-x-3 max-[800px]:hidden"
-  >
-    {
-      Astro.url.pathname !== "/" ? (
-        <Anchors href="/" title="Inicio" icon="home-2" type="header" />
-      ) : null
-    }
-    <Anchors
-      href="/proyectos"
-      title="Proyectos"
-      icon="bookmark"
-      type="header"
-    />
-    <Anchors
-      href="/testimonios"
-      title="Testimonios"
-      icon="chat-1"
-      type="header"
-    />
-    <Anchors href="/contacto" title="Contacto" icon="inbox" type="header" />
-  </nav>
 
-  <span class="hidden max-[800px]:flex w-full justify-end items-center">
-    <i
-      class="ri-menu-line text-[45px] w-[50px] h-[50px] flex justify-center items-center"
-      id="open-menu"></i>
-  </span>
-</header>
+  <script>
+    const OpenMenu = document.getElementById("open-menu") as HTMLElement;
+    const CloseMenu = document.getElementById("close-menu") as HTMLElement;
+    const Menu = document.querySelector("menu") as HTMLMenuElement;
+    const Anchors = document.querySelectorAll(
+      "a",
+    ) as NodeListOf<HTMLAnchorElement>;
 
-<script>
-  const OpenMenu = document.getElementById("open-menu") as HTMLElement;
-  const CloseMenu = document.getElementById("close-menu") as HTMLElement;
-  const Menu = document.querySelector("menu") as HTMLMenuElement;
-  const Anchors = document.querySelectorAll(
-    "a"
-  ) as NodeListOf<HTMLAnchorElement>;
+    OpenMenu.addEventListener("click", () => {
+      Menu.style.display = "flex";
+    });
 
-  OpenMenu.addEventListener("click", () => {
-    Menu.style.display = "flex";
-  });
-
-  CloseMenu.addEventListener("click", () => {
-    Menu.style.display = "none";
-  });
-
-  Anchors.forEach((e) => {
-    e.addEventListener("click", () => {
+    CloseMenu.addEventListener("click", () => {
       Menu.style.display = "none";
     });
-  });
-</script>
+
+    Anchors.forEach((e) => {
+      e.addEventListener("click", () => {
+        Menu.style.display = "none";
+      });
+    });
+  </script>
+</header>

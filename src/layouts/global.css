@@ -19,3 +19,30 @@
   font-size: 1.5rem;
   color: white;
 }
+
+.empresa {
+  display: flex;
+  font-size: 1.5rem;
+  width: 100%;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 1rem;
+  gap: 1rem;
+
+  img {
+    display: flex;
+    width: 10%;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+
+  span {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    font-size: 2rem;
+    color: blue;
+    font-weight: bold;
+    font-family: "Montserrat", sans-serif;
+  }
+}
