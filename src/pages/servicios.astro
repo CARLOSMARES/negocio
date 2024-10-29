@@ -1,7 +1,19 @@
 ---
+import Servicio from "@components/cards/servicio.astro";
 import Layout from "@layouts/Layout.astro";
+import serviciosArray from "../data/servicios.json";
 ---
 
 <Layout>
     <h1 class="texto-titulo">Servicios</h1>
+    <div class="items-center grid grid-cols-2 gap-4">
+        {
+            serviciosArray.map((servicio) => (
+                <Servicio
+                    title={servicio.title}
+                    description={servicio.description}
+                />
+            ))
+        }
+    </div>
 </Layout>

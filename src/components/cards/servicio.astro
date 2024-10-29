@@ -1,0 +1,18 @@
+---
+const { title, description } = Astro.props;
+---
+
+<div
+    class="max-w-sm rounded-lg overflow-hidden shadow-lg bg-white border border-gray-200"
+>
+    <div class="px-6 py-4">
+        <h2
+            class="font-bold text-xl mb-2 text-gray-800 border-black border-b-2"
+        >
+            {title}
+        </h2>
+        <p class="text-gray-600 text-base">
+            {description}
+        </p>
+    </div>
+</div>
