@@ -1,4 +1,10 @@
-**Términos y Condiciones de Uso**  
+
+<div align="center">
+  <h1><b>Términos y Condiciones de Uso</b></h1>
+</div>
+
+---
+
 Última actualización: 18 de noviembre de 2024  
 
 Bienvenido/a a las aplicaciones desarrolladas por Carlos Mares Dev ("nosotros", "nuestro" o "la aplicación"). Al descargar, instalar o utilizar nuestras aplicaciones, aceptas cumplir con estos Términos y Condiciones de Uso. Si no estás de acuerdo con ellos, no utilices nuestras aplicaciones.  

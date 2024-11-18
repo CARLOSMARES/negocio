@@ -1,4 +1,10 @@
-**Política de Privacidad**  
+
+<div align="center">
+  <h1><b> Política de Privacidad</b></h1>
+</div>
+
+---
+
 Última actualización: 18 de noviembre de 2024  
 
 Carlos Mares Dev ("nosotros", "nuestro" o "la aplicación") respeta su privacidad y está comprometido a proteger la información personal que comparte con nosotros. Esta Política de Privacidad aplica a todas las aplicaciones desarrolladas por Carlos Mares Dev disponibles en Google Play y describe cómo recopilamos, utilizamos y compartimos la información.  
